@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/struts6.iml" filepath="$PROJECT_DIR$/struts6.iml" />
       <module fileurl="file://$PROJECT_DIR$/../struts7/struts7.iml" filepath="$PROJECT_DIR$/../struts7/struts7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../struts7/struts7.iml" filepath="$PROJECT_DIR$/../struts7/struts7.iml" />
     </modules>
   </component>
 </project>
