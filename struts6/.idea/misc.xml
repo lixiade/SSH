@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/../../SSH" />
+    <file type="web" url="file://$PROJECT_DIR$/.." />
     <file type="web" url="file://$PROJECT_DIR$" />
     <file type="web" url="file://$PROJECT_DIR$/../struts7" />
   </component>
@@ -10,6 +10,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../struts7/pom.xml" />
+        <option value="$PROJECT_DIR$/../struts8/pom.xml" />
+        <option value="$PROJECT_DIR$/../struts9/pom.xml" />
       </list>
     </option>
   </component>
