@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hibernate4" default="all">
+  
+  
+  <property file="hibernate4.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.zip"/>
+    <include name="*.ane"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-32.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_antlr:antlr:2.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml:classmate:1.3.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/classmate/1.3.0/classmate-1.3.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.mchange:c3p0:0.9.5.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/mchange/c3p0/0.9.5.2/c3p0-0.9.5.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/mchange/mchange-commons-java/0.2.11/mchange-commons-java-0.2.11.jar"/>
+  </path>
+  
+  <path id="library.maven:_dom4j:dom4j:1.6.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_junit:junit:4.11.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.11/junit-4.11.jar"/>
+  </path>
+  
+  <path id="library.maven:_mysql:mysql-connector-java:5.1.39.classpath">
+    <pathelement location="${path.variable.maven_repository}/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.0.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-c3p0:5.2.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-c3p0/5.2.8.Final/hibernate-c3p0-5.2.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-core:5.2.8.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-core/5.2.8.Final/hibernate-core-5.2.8.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.javassist:javassist:3.20.0-ga.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.logging:jboss-logging:3.3.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.1.Final/jboss-transaction-api_1.2_spec-1.0.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss:jandex:2.0.3.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/jandex/2.0.3.Final/jandex-2.0.3.Final.jar"/>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_hibernate4.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.hibernate4, clean.artifact.hibernate4:war_exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.hibernate4" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.hibernate4:war" value="${basedir}/target"/>
+    <property name="artifact.output.hibernate4:war_exploded" value="${basedir}/target/hibernate4"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.hibernate4.war" value="${artifacts.temp.dir}/hibernate4.war"/>
+  </target>
+  
+  <target name="clean.artifact.hibernate4:war_exploded" description="clean hibernate4:war exploded artifact output">
+    <delete dir="${artifact.output.hibernate4:war_exploded}"/>
+  </target>
+  
+  <target name="artifact.hibernate4:war" depends="init.artifacts, artifact.hibernate4:war_exploded" description="Build &#39;hibernate4:war&#39; artifact">
+    <property name="artifact.temp.output.hibernate4:war" value="${artifacts.temp.dir}/hibernate4_war"/>
+    <mkdir dir="${artifact.temp.output.hibernate4:war}"/>
+    <zip destfile="${temp.jar.path.hibernate4.war}">
+      <zipfileset dir="${artifact.output.hibernate4:war_exploded}"/>
+    </zip>
+    <copy file="${temp.jar.path.hibernate4.war}" tofile="${artifact.temp.output.hibernate4:war}/hibernate4.war"/>
+  </target>
+  
+  <target name="artifact.hibernate4:war_exploded" depends="init.artifacts, compile.module.hibernate4" description="Build &#39;hibernate4:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.hibernate4:war_exploded}"/>
+    <mkdir dir="${artifact.output.hibernate4:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.hibernate4:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.hibernate4:war_exploded}/WEB-INF/classes">
+      <fileset dir="${hibernate4.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-core/5.2.8.Final/hibernate-core-5.2.8.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/hibernate-core-5.2.8.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/jboss-logging-3.3.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/javassist-3.20.0-GA.jar"/>
+    <copy file="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/antlr-2.7.7.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.1.Final/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/jandex/2.0.3.Final/jandex-2.0.3.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/jandex-2.0.3.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/com/fasterxml/classmate/1.3.0/classmate-1.3.0.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/classmate-1.3.0.jar"/>
+    <copy file="${path.variable.maven_repository}/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/dom4j-1.6.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-c3p0/5.2.8.Final/hibernate-c3p0-5.2.8.Final.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/hibernate-c3p0-5.2.8.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/com/mchange/c3p0/0.9.5.2/c3p0-0.9.5.2.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/c3p0-0.9.5.2.jar"/>
+    <copy file="${path.variable.maven_repository}/com/mchange/mchange-commons-java/0.2.11/mchange-commons-java-0.2.11.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/mchange-commons-java-0.2.11.jar"/>
+    <copy file="${path.variable.maven_repository}/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/lib/mysql-connector-java-5.1.39.jar"/>
+    <mkdir dir="${artifact.output.hibernate4:war_exploded}/META-INF"/>
+    <copy file="${basedir}/target/hibernate4/META-INF/MANIFEST.MF" tofile="${artifact.output.hibernate4:war_exploded}/META-INF/MANIFEST.MF"/>
+    <copy todir="${artifact.output.hibernate4:war_exploded}">
+      <fileset dir="${basedir}/src/main/webapp"/>
+    </copy>
+    <mkdir dir="${artifact.output.hibernate4:war_exploded}/WEB-INF"/>
+    <copy file="${basedir}/src/main/webapp/WEB-INF/web.xml" tofile="${artifact.output.hibernate4:war_exploded}/WEB-INF/web.xml"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.hibernate4:war, artifact.hibernate4:war_exploded" description="Build all artifacts">
+    <mkdir dir="${artifact.output.hibernate4:war}"/>
+    <copy todir="${artifact.output.hibernate4:war}">
+      <fileset dir="${artifact.temp.output.hibernate4:war}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

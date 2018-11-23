@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_hibernate4" default="compile.module.hibernate4">
+  <dirname property="module.hibernate4.basedir" file="${ant.file.module_hibernate4}"/>
+  
+  <property name="module.jdk.home.hibernate4" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.hibernate4" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.hibernate4" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.hibernate4" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="hibernate4.output.dir" value="${module.hibernate4.basedir}/target/classes"/>
+  <property name="hibernate4.testoutput.dir" value="${module.hibernate4.basedir}/target/test-classes"/>
+  
+  <path id="hibernate4.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="hibernate4.module.production.classpath">
+    <path refid="${module.jdk.classpath.hibernate4}"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.2.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.0.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.3.0.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.0.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-c3p0:5.2.8.final.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:5.1.39.classpath"/>
+  </path>
+  
+  <path id="hibernate4.runtime.production.module.classpath">
+    <pathelement location="${hibernate4.output.dir}"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.2.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.0.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.3.0.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.0.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-c3p0:5.2.8.final.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:5.1.39.classpath"/>
+  </path>
+  
+  <path id="hibernate4.module.classpath">
+    <path refid="${module.jdk.classpath.hibernate4}"/>
+    <pathelement location="${hibernate4.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.2.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.0.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.3.0.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.0.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-c3p0:5.2.8.final.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:5.1.39.classpath"/>
+  </path>
+  
+  <path id="hibernate4.runtime.module.classpath">
+    <pathelement location="${hibernate4.testoutput.dir}"/>
+    <pathelement location="${hibernate4.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:5.2.8.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.final.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:2.0.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.3.0.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:5.0.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-c3p0:5.2.8.final.classpath"/>
+    <path refid="library.maven:_com.mchange:c3p0:0.9.5.2.classpath"/>
+    <path refid="library.maven:_com.mchange:mchange-commons-java:0.2.11.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:5.1.39.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.hibernate4">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.hibernate4">
+    <patternset refid="excluded.from.module.hibernate4"/>
+  </patternset>
+  
+  <path id="hibernate4.module.sourcepath">
+    <dirset dir="${module.hibernate4.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="hibernate4.module.test.sourcepath">
+    <dirset dir="${module.hibernate4.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.hibernate4" depends="compile.module.hibernate4.production,compile.module.hibernate4.tests" description="Compile module hibernate4"/>
+  
+  <target name="compile.module.hibernate4.production" depends="register.custom.compilers" description="Compile module hibernate4; production classes">
+    <mkdir dir="${hibernate4.output.dir}"/>
+    <javac2 destdir="${hibernate4.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.hibernate4}/javac">
+      <compilerarg line="${compiler.args.hibernate4}"/>
+      <bootclasspath refid="hibernate4.module.bootclasspath"/>
+      <classpath refid="hibernate4.module.production.classpath"/>
+      <src refid="hibernate4.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.hibernate4"/>
+    </javac2>
+    
+    <copy todir="${hibernate4.output.dir}">
+      <fileset dir="${module.hibernate4.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.hibernate4.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.hibernate4.tests" depends="register.custom.compilers,compile.module.hibernate4.production" description="compile module hibernate4; test classes" unless="skip.tests">
+    <mkdir dir="${hibernate4.testoutput.dir}"/>
+    <javac2 destdir="${hibernate4.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.hibernate4}/javac">
+      <compilerarg line="${compiler.args.hibernate4}"/>
+      <bootclasspath refid="hibernate4.module.bootclasspath"/>
+      <classpath refid="hibernate4.module.classpath"/>
+      <src refid="hibernate4.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.hibernate4"/>
+    </javac2>
+    
+    <copy todir="${hibernate4.testoutput.dir}">
+      <fileset dir="${module.hibernate4.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.hibernate4" description="cleanup module">
+    <delete dir="${hibernate4.output.dir}"/>
+    <delete dir="${hibernate4.testoutput.dir}"/>
+  </target>
+</project>
