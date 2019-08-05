@@ -16,6 +16,7 @@ public class AdminAction  extends ActionSupport{
     public String list() {
         adminList = adminService.findAdmins();
         return SUCCESS;
+        // test push
     }
 
     public String add() {
